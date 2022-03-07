@@ -1,0 +1,2 @@
+// 异步更新，主要运用浏览器的异步任务来实现，首选微任务，没有宏任务
+//set() -- > dep notify() ---> watcher --> update() ---> queueWatcher[] ---> nextTick 刷新wacther 队列的方法放callback ---> callback[flushSchlerQueue()] ---> 浏览器异步任务队列刷新flushCallback
