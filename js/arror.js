@@ -20,46 +20,54 @@
 
 
 
-
 //test
 var number = 5;
 var obj = {
   number: 3,
-  fn1: (function () { //立即执行函数
+  fn1: (function () {
     var number = 3
-    this.number *= 2; // 10
+    this.number *= 2;
     return function () {
       var num = this.number;
       this.number *= 2;
       console.log(num);
       number *= 3;
-      console.log(number); // 9
+      console.log(number);
     }
   })()
 }
 
 var fn1 = obj.fn1;
-fn1.call(null); // 10 , 9 this指向
-obj.fn1(); // 3 27 闭包 
-console.log(window.number); // 40
+fn1.call(null);
+obj.fn1();
+console.log(window.number);
+// 10 , 9 this指向
+// 3 27 闭包 
+//20
 
 var number = 5;
 var obj = {
   number: 3,
-  fn1: (function () { //立即执行函数
+  fn1: (function () {
     var number = 3
-    this.number *= 2; // 10
-    return () => {  // win 箭头函数
+    this.number *= 2;//10
+    return () => {
       var num = this.number;
       this.number *= 2;
       console.log(num);
       number *= 3;
-      console.log(number); // 9
+      console.log(number);
     }
   })()
 }
 
+
+
 var fn1 = obj.fn1;
-fn1.call(null); // 10 , 9 this指向
-obj.fn1(); // 20 27 闭包 
-console.log(window.number); // 40
+fn1.call(null);
+obj.fn1();
+console.log(window.number);
+
+// 10 , 9 this指向
+// 20 27 闭包 
+// 40

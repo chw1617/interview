@@ -29,8 +29,8 @@
 // 11、es6+新增api：字符串模板,数组api,结构赋值,箭头函数，模块化，异步解决方案
 // 12 深拷贝和浅拷贝 assign,拓展运输符 ,深拷贝(json.parse(json.stringify)) 递归
 // 13 防抖节流; 1s 后准时出发throllte :input 2,等1s 中间有人,重新计算再等1s防抖debounce :scroll
-// 14 模块化
-// 15 异步编程解决方案
+// 14 模块化（命名空间--立即执行函数--commonjs--esmodule）
+// 15 异步编程解决方案（回调函数，promise，generator,async,发布订阅，事件）
 
 
 // 四 计算机网络
@@ -47,15 +47,16 @@
 // 4.data,props为啥返回函数
 // 5.动画,slot
 // 6.组件,指令,插件
-// 5.computed,watch,method  
+// 7.computed,watch,method 区别
+// 8.vuex state,getter,mutation ,action,module
 
 // 原理
-// 1.vue原理:
+// 1.vue原理:1、new vue发生了什么，2、响应式原理，3，runtime + compiler  4,异步更新 
 // 2.vue-router原理
 // 3.vuex原理
 // 4.响应式原理
-// 5.vdom
-// 6.diff 算法
+// 5.vdom和 dom 区别
+// 6.diff 算法（双端比较，最长递增子序列）
 
 // 六 打包工具
 // 1.webpack 核心概念和相关配置
@@ -80,16 +81,25 @@
 // 在runtime中
 
 
-// 七 数据结构,算法,设计模式
-// 1.数组和链表有啥区别 ,查找,插入, 删除时间复杂度
+// 七 数据结构,算法,设计模式（单例模式，观察者模式，发布订阅模式）
+// 1.数组和链表有啥区别 ,查找,插入, 删除时间、空间复杂度
 // 2.树的深度遍历和广度遍历
 // 3.快速排序实现思路
 // 4.letecode 题目  
 // 5.发布订阅和观察者模式实现
 
 
+// test 
+//单元测试 jest  ===> 构建一个测试用例
+//组件测试 vue test library
+//端到端测试 e2e cypress
 
 
-
+// 手写题目
+//1、防抖节流
+//2、instanceof
+//3、new,bind,call,apply
+//4、排序搜索算法（冒泡，选择，插入，归并，快速）
+//5、设计模式
 
 
