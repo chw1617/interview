@@ -5,3 +5,4 @@
 // 核心是通过object.definedProperty 拦截对数据访问和设置
 // 对于对象，访问数据的时候（obj.key）get()进行依赖收集，在dep中存储watcher,set() 设置数据的时候dep notify通知watcher update
 // 对于数组, 拦截数组的七个改变自身的方法  push,pop,shift.unshift,sort,splice,reverse 添加新数据进行响应式拦截，dep 通知更新，delete时候也是dep 通知更新
+
