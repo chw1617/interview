@@ -8,3 +8,16 @@
 4、协议的标识是ws
 5、建立在tcp 协议上，服务端比较容易实现
 6、和http 有很好的兼容性，端口也是443和80，握手阶段也是采用http协议
+
+
+// client demo 
+let ws = new WebSocket('wss://echo.websocker.io')
+ws.onopen = function(e){
+    console.log('connection open')
+}
+ws.onclose = function(e){
+    console.log('connection received message')
+} 
+ws.onclose = function(e){
+    console.log('connection close')
+}
