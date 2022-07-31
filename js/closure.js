@@ -33,7 +33,7 @@ function debounce(fn,await,immedat){
             clearTimeout(timer) //有就清楚
         }
         if(immedat){
-            let call = !timer
+           let call = !timer
            timer =  setTimeout(()=>{
                 fn.apply(this,arguments)
             })

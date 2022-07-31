@@ -10,6 +10,7 @@
 // 4. postcss ：js转换css代码工具，浏览器兼容和前缀添加 未来css添加今天ployfills
 // 5. css3新增属性
 
+
 // 三 js 基础
 // 1、数据类型：说一下js的数据类型分那几种，分别有哪些，还有他们的存储地址（闭包里的基本类型）
 // 2、类型判断：js 的数据类型判断方式有哪些 1、typeof 2、instanceof(手写) 3、Object.prototype.toString 4、isArray,isNaN
@@ -39,6 +40,7 @@
 // 3. 常见的状态码 
 // 4. tcp/ip 的三次握手和四次挥手
 
+
 // 五 框架
 // 用法 
 // 1.vue 父子组件通信
@@ -47,19 +49,22 @@
 // 4.data,props为啥返回函数
 // 5.动画,slot
 // 6.组件,指令,插件
-// 7.computed,watch,method 区别
-// 8.vuex state,getter,mutation ,action,module
+// 7.computed（缓存）,watch,method（如果在template里面，每次渲染都会执行） 区别和应用场景
+// 8.vuex state,getter,mutation,action,module
+
+
 
 // 原理
-// 1.vue原理:1、new vue发生了什么，2、响应式原理，3，runtime + compiler  4,异步更新 
+// 1.vue原理:1，import 时候初始化了啥 2、new vue发生了什么，3、响应式原理，4，runtime + compiler  5,异步更新 
 // 2.vue-router原理
 // 3.vuex原理
 // 4.响应式原理
 // 5.vdom和 dom 区别
 // 6.diff 算法（双端比较，最长递增子序列）
 
-// 六 打包工具
-// 1.webpack 核心概念和相关配置
+// 六 构建工具
+// 1.webpack 核心概念和相关配置 
+// loader {test:xx,use:xxx,include:xxx,exclude:xxx}
 // 2.webpack 原理
 // 3.webpack 中tree-shaking 原理
 // webpack核心概念
@@ -81,6 +86,12 @@
 // 在runtime中
 
 
+// babel作用：1、转换es6新语法成es5语法，2、补充浏览器没有的新特性 3、转换源代码
+// plugins:['a','b','c'] // 补充特性
+// presets:['a','b','c'] //c > b > a 集成一组plugin插件
+
+
+
 // 七 数据结构,算法,设计模式（单例模式，观察者模式，发布订阅模式）
 // 1.数组和链表有啥区别 ,查找,插入, 删除时间、空间复杂度
 // 2.树的深度遍历和广度遍历
@@ -95,11 +106,91 @@
 //端到端测试 e2e cypress
 
 
+
 // 手写题目
 //1、防抖节流
 //2、instanceof
 //3、new,bind,call,apply
 //4、排序搜索算法（冒泡，选择，插入，归并，快速）
-//5、设计模式
+//5、设计模式发布订阅
+
+
+
+//场景题
+// 1万条数据渲染，代码性能优化
+
+
+//算法
+//分析时间复杂度和空间复杂度
+
+// node 文件模块
+// 模块规范
+// 查找策略
+//abstruct syntax tree
+// parse 词法，语法
+// transform
+// generate
+// 插件化系统
+//解耦和
+
+
+// core -- api -- plugin
+// 通过用法猜测设计
+// 插件化
+// 工具库
+const core = {
+    use(plugins){
+        const {name,fn} = plugins
+        this[name] = fn
+    },
+    install(plugin){
+        // const {name,fn} = plugin()
+        // this[name] = fn
+        plugin(this)
+    }
+    p1:fn,
+    p2:fn,
+    p3:fn
+}
+function plugin1(core){
+    // return {
+    //     name:"p1",
+    //     fn:function(){}
+    // }
+    core.use({
+        name:'p1',
+        fn:function(){}
+    })
+}
+function plugin2(core){ //传递core 的目的是为了解决各个插件可以互相依赖
+    // return { 完全独立
+    //     name:"p2",
+    //     fn:function(){}
+    // }
+    core.use({ 
+        name:'p2',
+        fn:function(){}
+    })
+}
+
+core.install(plugin1)
+core.install(plugin2)
+
+console.log(core)
+
+// vue
+vue.use(plugin) // plugins:[p1,p2]
+
+function use(plugin){
+    this.plugin = this._pligins || []
+    plugin()
+
+}
+
+
+// jqery
+
+// babel
+// vue-cli
 
 

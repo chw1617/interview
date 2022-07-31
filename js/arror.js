@@ -43,7 +43,7 @@ obj.fn1();
 console.log(window.number);
 // 10 , 9 this指向
 // 3 27 闭包 
-//20
+// 20
 
 var number = 5;
 var obj = {
@@ -71,3 +71,14 @@ console.log(window.number);
 // 10 , 9 this指向
 // 20 27 闭包 
 // 40
+
+
+var value = 1
+function print(){
+    console.log(value)
+}
+function fn(){
+    var value = 2
+    print()
+}
+fn() 

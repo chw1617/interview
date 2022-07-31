@@ -15,6 +15,4 @@ new Promise(function(resolve, reject) {
     }, 0)
 })
 
-
-
 // 3,4,1,2,5
